@@ -7,9 +7,12 @@ use Monolog\Logger;
 $log = new Logger('logger');
 
 $stdoutHandler = new \Monolog\Handler\ErrorLogHandler();
+
+// JSON formatter
 $formatter = new \Monolog\Formatter\JsonFormatter();
 $stdoutHandler->setFormatter($formatter);
 
+// Elasticsearch Handler
 $elasticaClient = new \Elastica\Client(
     [
         'host' => 'localhost',
@@ -24,10 +27,11 @@ $elasticsearchHandler = new \Monolog\Handler\ElasticSearchHandler(
     ]
 );
 
+// Register Handlers
 $log->pushHandler($stdoutHandler);
 $log->pushHandler($elasticsearchHandler);
 
-// APLICACION
+// APLICATIONS
 $options = getopt('a:b:');
 
 # App Servidor A
