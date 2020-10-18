@@ -32,3 +32,46 @@ docker-compose up -d elasticsearch
 ```
 curl http://localhost:9200
 ```
+
+### Create document
+```
+URL: http://localhost:9200/codely/_doc/1
+METHOD: PUT
+BODY:
+{
+    "level": "ERROR",
+    "message": "Algo ha fallado"
+}
+```
+
+### Get document
+```
+URL: http://localhost:9200/codely/_doc/1
+METHOD: GET
+```
+
+### Get index/mapping
+```
+URL: http://localhost:9200/codely/
+METHOD: GET
+```
+### Simple query
+```
+URL: http://localhost:9200/codely/_search?q=level:ERROR
+METHOD: GET
+```
+
+### Query with body
+```
+URL: http://localhost:9200/codely/_doc/_search
+METHOD: GET
+BODY:
+{
+    "query": {
+        "query_string": {
+            "fields": ["level"],
+            "query": "ERROR or WARNING"
+        }
+    }
+}
+```
