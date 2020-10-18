@@ -22,3 +22,8 @@ Execute the PHP sample application
 ```
 php app/php/app.php -a fo1 -b bar
 ```
+
+### Command for start elasticsearch
+```
+docker-compose up -d elasticsearch
+```
