@@ -1,0 +1,11 @@
+{
+    "name": "jorge/php",
+    "description": "Example for logs in elasticsearch",
+    "authors": [
+        {
+            "name": "jorgechavezrnd",
+            "email": "jorgechavezrnd@gmail.com"
+        }
+    ],
+    "require": {}
+}
