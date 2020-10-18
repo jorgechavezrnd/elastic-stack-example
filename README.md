@@ -27,3 +27,8 @@ php app/php/app.php -a fo1 -b bar
 ```
 docker-compose up -d elasticsearch
 ```
+
+### Check if elasticsearch is runng
+```
+curl http://localhost:9200
+```
