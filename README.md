@@ -75,3 +75,8 @@ BODY:
     }
 }
 ```
+
+### For load example data in elasticsearch
+- Download data from: https://www.elastic.co/guide/en/kibana/6.8/tutorial-load-dataset.html
+- Unzip the file
+- Command for load data (for windows, execute with WSL if has some error in cmd): `curl -H 'Content-Type: application/x-ndjson' -XPOST 'localhost:9200/_bulk?pretty' --data-binary @logs.jsonl`
