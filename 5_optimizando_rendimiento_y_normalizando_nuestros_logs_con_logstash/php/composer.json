@@ -1,0 +1,13 @@
+{
+    "name": "jorge/php",
+    "description": "Example in php for Logstash",
+    "authors": [
+        {
+            "name": "jorgechavezrnd",
+            "email": "jorgechavezrnd@gmail.com"
+        }
+    ],
+    "require": {
+        "monolog/monolog": "^1.23"
+    }
+}
