@@ -90,3 +90,30 @@ docker-compose up -d logstash
 ```
 curl http://localhost:9600/\?pretty
 ```
+
+### Execute and send logs from php and java programs
+- Start elasticsearch and logstash containers
+```
+docker-compose up -d elasticsearch
+docker-compose up -d logstash
+```
+- Show logstash output
+```
+docker-compose logs -f logstash
+```
+- Execute php code in 5_optimizando_rendimiento_y_normalizando_nuestros_logs_con_logstash/php
+```
+php app.php -a warning -b info
+```
+- Execute java code in 5_optimizando_rendimiento_y_normalizando_nuestros_logs_con_logstash/javaexample
+```
+gradlew test
+```
+- LOGS CREATED BY JAVA WILL NOT BE INSERTED IN ELSTICSEARCH, BECAUSE THE FORMAT IS DIFERENT FROM PHP
+- FOR SOLVE THIS PROBLEMA, WE COULD ADD ONE STEP IN LOGSTASH, BETWEEN input AND output, for example:
+```
+filter {
+    ...
+}
+```
+  AND USE PLUGINS FOR LOGSTASH, LIKE 'TRANSLATE FILTER': https://www.elastic.co/guide/en/logstash/current/plugins-filters-translate.html
