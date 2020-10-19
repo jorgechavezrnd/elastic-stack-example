@@ -2,3 +2,11 @@
 app/php/vendor
 /var/
 vendor/
+
+# Vscode Java
+.classpath
+.project
+.settings
+bin/
+.gradle/
+build/
