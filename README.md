@@ -103,3 +103,12 @@ docker-compose up -d kibana
 ```
 docker-compose up -d filebeat
 ```
+
+### Comman for run php app and send logs with filebeat (in 5_optimizando_rendimiento_y_normalizando_nuestros_logs_con_logstash/php)
+```
+php app.php -a warning -b info
+```
+- This command just generate a file with logs in var/logs, and beats take this logs and send it to elasticsearch
+
+### IMPORTANT
+- Be careful with the versions of the stack components, in this case they are all 7.5.0, that's why everything works fine (elasticsearch, kibana, logstash and beats)
