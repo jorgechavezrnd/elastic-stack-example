@@ -98,3 +98,8 @@ docker-compose up -d kibana
 
 ### URL for kibana dashboard
 - http://localhost:5601
+
+### Command for start filebeat (elasticsearch should be started before this command, and for this example, logstash should be off)
+```
+docker-compose up -d filebeat
+```
