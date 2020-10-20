@@ -90,3 +90,11 @@ docker-compose up -d logstash
 ```
 curl http://localhost:9600/\?pretty
 ```
+
+### Command for start kibana (elasticsearch should be started before this command)
+```
+docker-compose up -d kibana
+```
+
+### URL for kibana dashboard
+- http://localhost:5601
